@@ -15,7 +15,7 @@
 
 
 // const toaster = createToaster({ placement: 'top' });
-// const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:5000";
+// const BACKEND_URL = import.meta.env.example.VITE_BACKEND_URL || "http://localhost:5000";
 
 
 // const GroupChatModal = ( { children } ) => {
@@ -226,7 +226,7 @@ import { ChatState } from '../../Context/ChatProvider';
 import UserBadgeItem from '../UserAvatar/UserBadgeItem';
 
 const toaster = createToaster({ placement: 'top' });
-const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:5000";
+const BACKEND_URL = import.meta.env.example.VITE_BACKEND_URL || "http://localhost:5000";
 
 const GroupChatModal = ({ children }) => {
   const [groupChatName, setGroupChatName] = useState("");

@@ -16,7 +16,7 @@
 // import UserListItem from "../UserAvatar/UserListItem";
 
 // const toaster = createToaster({ placement: 'top' });
-// const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:5000";
+// const BACKEND_URL = import.meta.env.example.VITE_BACKEND_URL || "http://localhost:5000";
 
 
 // const UpdateGroupChatModal = ({ fetchAgain, setFetchAgain, fetchMessages }) => {
@@ -341,7 +341,7 @@ import { ChatState } from "../../Context/ChatProvider";
 import UserListItem from "../UserAvatar/UserListItem";
 
 const toaster = createToaster({ placement: "top" });
-const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:5000";
+const BACKEND_URL = import.meta.env.example.VITE_BACKEND_URL || "http://localhost:5000";
 
 const UpdateGroupChatModal = ({ fetchAgain, setFetchAgain, fetchMessages }) => {
   const [isOpen, setIsOpen] = useState(false);
