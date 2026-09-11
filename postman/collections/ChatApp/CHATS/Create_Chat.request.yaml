@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{url for chat}}"
+method: POST
+order: 1788157371113

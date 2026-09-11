@@ -1,0 +1,6 @@
+$kind: http-request
+method: POST
+url: "{{url for user}}"
+order: 1788157272349
+headers:
+  Content-Type: application/json

@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{url for chat}}/groupremove"
+method: PUT
+order: 4480786712089739

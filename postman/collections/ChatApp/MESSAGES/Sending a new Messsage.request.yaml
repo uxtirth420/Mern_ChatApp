@@ -1,0 +1,17 @@
+$kind: http-request
+url: "{{url for message}}"
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"content\": \"hello\",\r
+
+    \    \"chatId\": \"6a9524c9bd4cc2af1c1c7b5e\"\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: "{{token}}"
+order: 1788157449715

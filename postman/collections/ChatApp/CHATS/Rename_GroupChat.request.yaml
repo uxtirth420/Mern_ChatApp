@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{url for chat}}/rename"
+method: PUT
+order: 4475505627801122

@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{url for chat}}/group"
+method: POST
+order: 4458010397827105

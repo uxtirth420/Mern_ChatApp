@@ -1,0 +1,8 @@
+$kind: http-request
+url: "{{url for message}}/6a9524c9bd4cc2af1c1c7b5e"
+method: GET
+auth:
+  type: bearer
+  credentials:
+    token: "{{token}}"
+order: 3178754501494653

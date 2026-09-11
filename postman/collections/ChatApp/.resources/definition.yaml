@@ -1,0 +1,4 @@
+$kind: collection
+description: Collection for Chat App messaging API requests
+variables:
+  base_url: http://localhost:5000

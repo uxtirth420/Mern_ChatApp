@@ -1,0 +1,10 @@
+name: New Environment
+values:
+  - key: url for chat
+    value: ''
+  - key: url for user
+    value: ''
+  - key: url for message
+    value: ''
+  - key: token
+    value: ''
