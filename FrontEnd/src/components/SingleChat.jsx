@@ -12,10 +12,10 @@ const ProfileModal = React.lazy(() => import('./miscellaneous/ProfileModal'));
 const UpdateGroupChatModal = React.lazy(() => import('./miscellaneous/UpdateGroupChatModal'));
 const ScrollableChat = React.lazy(() => import('./ScrollableChat'));
 
-// const socket = io(import.meta.env.example.VITE_BACKEND_URL || "http://localhost:5000");
-const ENDPOINT = import.meta.env.example.VITE_BACKEND_URL || "http://localhost:5000"; // Backend server url.
+// const socket = io(import.meta.env.VITE_BACKEND_URL || "http://localhost:5000");
+const ENDPOINT = import.meta.env.VITE_BACKEND_URL || "http://localhost:5000"; // Backend server url.
 const toaster = createToaster({ placement: 'top' });
-const BACKEND_URL = import.meta.env.example.VITE_BACKEND_URL || "http://localhost:5000";
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:5000";
 
 const SingleChat = ( {fetchAgain, setFetchAgain} ) => {
 
