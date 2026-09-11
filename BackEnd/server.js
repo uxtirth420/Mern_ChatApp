@@ -17,6 +17,7 @@ const allowedOrigin = process.env.ORIGIN || process.env.origin || 'http://localh
 app.use(cors({
     origin: allowedOrigin,
     credentials: true, // Required for cookies to work cross origin
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'] //Before your GET request, the browser sends an OPTIONS request. If your backend isn't configured to handle OPTIONS with a 200 status, the browser will block the actual request with a 403.
 })); 
 
