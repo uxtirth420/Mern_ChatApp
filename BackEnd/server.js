@@ -24,7 +24,11 @@ connectDB();
 app.use(express.json());  // To accept the json data.
 
 app.get("/", (req, res) => {
-  res.send("API is Running Successfully");
+  if (process.env.NODE_ENV === "production") {
+    res.sendFile(path.join(__dirname, '../FrontEnd/dist/index.html'));
+  } else {
+    res.send("API is Running Successfully");
+  }
 });
 
 app.use("/api/user", userRoutes);
