@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const userRoutes = require('./routes/userRoutes');
@@ -13,7 +14,7 @@ const connectDB = require('./config/db');
 const app = express();
 
 app.use(cors({
-    origin: process.env.origin || 'http://localhost:5173', // Vite default port
+    origin: process.env.ORIGIN || process.env.origin || 'http://localhost:5173', // Vite default port
     credentials: true, // Required for cookies to work cross origin
     allowedHeaders: ['Content-Type', 'Authorization'] //Before your GET request, the browser sends an OPTIONS request. If your backend isn't configured to handle OPTIONS with a 200 status, the browser will block the actual request with a 403.
 })); 
@@ -31,23 +32,22 @@ app.use("/api/chat", chatRoutes);
 app.use("/api/user/login", userRoutes);
 app.use("/api/message", messageRoutes);
 
-// Deploment //
-
-const __dirname = path.resolve();
+// Deployment //
 
 if(process.env.NODE_ENV === "production") {
+  const frontendDistPath = path.join(__dirname, '../FrontEnd/dist');
 
-app.use(express.static(path.join(__dirname, '/FrontEnd/build')));
+  app.use(express.static(frontendDistPath));
 
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'FrontEnd', 'dist', 'index.html'));
-})
-}else {
+  app.get(/.*/, (req, res) => {
+    res.sendFile(path.join(frontendDistPath, 'index.html'));
+  });
+} else {
   app.get('/', (req, res) => {
     res.send("API is running successfully");
-  })
+  });
 }
-// Deploment //
+// Deployment //
 
 app.use(notFound);
 app.use(errorHandler);
