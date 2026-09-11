@@ -12,9 +12,10 @@ dotenv.config();
 
 const connectDB = require('./config/db');
 const app = express();
+const allowedOrigin = process.env.ORIGIN || process.env.origin || 'http://localhost:5173';
 
 app.use(cors({
-    origin: process.env.ORIGIN || process.env.origin || 'http://localhost:5173', // Vite default port
+    origin: allowedOrigin,
     credentials: true, // Required for cookies to work cross origin
     allowedHeaders: ['Content-Type', 'Authorization'] //Before your GET request, the browser sends an OPTIONS request. If your backend isn't configured to handle OPTIONS with a 200 status, the browser will block the actual request with a 403.
 })); 
@@ -66,7 +67,8 @@ const server = app.listen(PORT, () => {
 const io = require('socket.io')(server, {
   pingTimeout: 60000,
   cors: {
-    origin: "http://localhost:5173", // vite default port
+    origin: allowedOrigin,
+    credentials: true,
   },
 });
 
